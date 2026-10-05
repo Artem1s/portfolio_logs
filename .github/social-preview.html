@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!-- Social preview + banner del README (1280x640). Se renderiza a social-preview.png con Edge/Playwright. -->
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@500;700;800&display=block" rel="stylesheet">
+<style>
+:root {
+  --bg: #000; --text: #fff; --text-2: #a1a1aa; --muted: #52525b; --border: #27272a; --elevated: #171717;
+  --accent: #e93d82; --accent-glow: rgba(233, 61, 130, 0.25); --contrast: #3b82f6;
+  --mono: 'JetBrains Mono', monospace; --sans: 'Space Grotesk', sans-serif;
+}
+* { box-sizing: border-box; margin: 0; }
+html, body { width: 1280px; height: 640px; overflow: hidden; color: var(--text); font-family: var(--sans);
+  background: radial-gradient(circle at 92% 100%, var(--accent-glow), transparent 48%),
+              radial-gradient(circle at 6% 0%, rgba(59, 130, 246, 0.2), transparent 42%), var(--bg); }
+.wrap { position: absolute; inset: 64px 72px; display: grid; grid-template-columns: 1fr 470px; gap: 56px; }
+.left { display: flex; flex-direction: column; }
+.tag { align-self: flex-start; font-family: var(--mono); color: var(--accent); border: 2px solid var(--accent); border-radius: 999px; padding: 6px 18px; font-size: 18px; font-weight: 700; letter-spacing: .08em; }
+h1 { margin-top: 34px; font-size: 76px; line-height: .98; letter-spacing: -0.035em; font-weight: 700; }
+h1 em { font-style: normal; color: var(--accent); text-shadow: 0 0 40px var(--accent-glow); }
+.sub { margin-top: 24px; font-size: 25px; line-height: 1.35; color: var(--text-2); max-width: 600px; }
+.sub b { color: var(--text); font-weight: 700; }
+.foot { margin-top: auto; display: flex; gap: 28px; font-family: var(--mono); font-size: 18px; color: var(--text-2); }
+.foot span::before { content: '→ '; color: var(--accent); }
+
+.right { display: flex; flex-direction: column; gap: 14px; justify-content: center; }
+.issue { background: rgba(0, 0, 0, .72); border: 1px solid var(--border); border-radius: 14px; padding: 16px 20px; display: grid; grid-template-columns: 26px 1fr; gap: 4px 12px; }
+.issue.hot { border-left: 4px solid var(--accent); box-shadow: 0 0 30px var(--accent-glow); }
+.dot { grid-row: span 2; width: 18px; height: 18px; margin-top: 4px; border-radius: 50%; border: 3px solid #3fb950; position: relative; }
+.dot::after { content: ''; position: absolute; inset: 3px; border-radius: 50%; background: #3fb950; }
+.t { font-size: 21px; font-weight: 700; letter-spacing: -0.01em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.meta { display: flex; gap: 6px; flex-wrap: nowrap; overflow: hidden; font-family: var(--mono); font-size: 13px; color: var(--muted); align-items: center; }
+.lb { font-family: var(--sans); font-size: 12.5px; font-weight: 700; border-radius: 999px; padding: 2px 9px; color: #fff; white-space: nowrap; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="left">
+    <span class="tag">ARTEM1S / PORTFOLIO_LOGS</span>
+    <h1>Dev logs from<br>the <em>Controlled<br>Chaos Lab.</em></h1>
+    <p class="sub">Games, apps and experiments built between laundry loads. <b>Every issue is a log. Nothing here needs fixing.</b> Except me.</p>
+    <div class="foot"><span>artem1s.nexoradev.com.ar</span><span>@artem1s.nexoradev</span></div>
+  </div>
+  <div class="right">
+    <div class="issue hot"><i class="dot"></i><div class="t">Someone Wrote "Make Something". So I Did</div>
+      <div class="meta">#23 <span class="lb" style="background:#d73a4a">bug</span><span class="lb" style="background:#a2eeef;color:#000">idea</span><span class="lb" style="background:#5319e7">creativecoding</span></div></div>
+    <div class="issue"><i class="dot"></i><div class="t">I Was Bored</div>
+      <div class="meta">#22 <span class="lb" style="background:#008672">help wanted</span><span class="lb" style="background:#3f3f46">rabbit-hole</span><span class="lb" style="background:#5319e7">whyamIlikeThis</span></div></div>
+    <div class="issue"><i class="dot"></i><div class="t">My Salary is gone,</div>
+      <div class="meta">#21 <span class="lb" style="background:#a855f7">mom life</span><span class="lb" style="background:#3f3f46">why-am-i-doing-this</span></div></div>
+    <div class="issue"><i class="dot"></i><div class="t">This Was Supposed to Be a Game Update</div>
+      <div class="meta">#20 <span class="lb" style="background:#3f3f46">rabbit-hole</span><span class="lb" style="background:#1d4ed8">quantumphysics</span></div></div>
+  </div>
+</div>
+</body>
+</html>
